@@ -63,7 +63,7 @@ This project aims to analyze Covid-19 cases at U.S. colleges and universities us
 ### Installation Steps
 1. **Clone this repository:**
    ```bash
-   git clone git@github.com:branndonle/covid-data-analysis.git
+   git clone https://github.com/branndonle/covid-data-analysis.git
 
    
 ### Key Changes:
