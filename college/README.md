@@ -1,12 +1,39 @@
-# Tracking Covid-19 at U.S. Colleges and Universities
+# Covid-19 Cases in U.S. Colleges (2020-2023) - MySQL Queries
 
-The New York Times released [counts of Covid-19 cases reported on college and university campuses](https://www.nytimes.com/interactive/2021/us/college-covid-tracker.html) in the United States during the 2020-21 academic year.
+This repository contains MySQL queries to analyze and gain insights from the [Covid-19 dataset](https://github.com/nytimes/covid-19-data) released by The New York Times, which tracks Covid-19 cases reported at U.S. colleges and universities during the 2020-2023 academic year.
 
-Between July 2020 and May 2021 we conducted a rolling survey of American colleges and universities — including every four-year public institution and every private college that competes in N.C.A.A. sports — to track the number of coronavirus cases reported among students and employees. The survey now includes more than 1,900 colleges. Starting in 2021 the number of cases in 2021 is also included.
 
-This data was most recently updated on May 26, 2021.
+## Data Source
 
-## Data
+The data used in this project is sourced from The New York Times, which surveyed U.S. colleges and universities to track Covid-19 cases among students, faculty, staff, and other workers during the 2020-2023 academic year.
+
+- Dataset link: [Colleges Covid-19 Data (CSV)](https://raw.githubusercontent.com/nytimes/covid-19-data/master/colleges/colleges.csv)
+- The dataset includes information such as:
+  - Date of report
+  - College name
+  - Location (state, county, city)
+  - Total reported cases since the start of the pandemic
+  - Cases reported in 2021
+  - Methodological notes
+ 
+  
+[The data file](college.csv) contains the following columns:
+
+| Column | Definition |
+| ------------- | ------------- |
+| **date** | The date of the most recent update |
+| **state** | The state where the college is located in the U.S. |
+| **county** | The county in each state where the college is located | 
+| **city** | The city where the college is located |
+| **ipeds_id** | The Integegrated Postsecondary Education Data System (IPEDS) ID number for the college in question |
+| **cases** | The total number of reported Covid-19 cases among university students and staff across all fields, including individuals in high-risk roles such as doctors, nurses, pharmacists, and medical students, from the start of the pandemic|
+| **cases_2021** | Cases reported specifically since January 1, 2021 only |
+| **notes** | Any special notes on the data collection |
+
+Colleges and universities that have reported zero cases will be listed with a zero for cases, while colleges which have not reported data will have a blank in the cases field.
+
+You can find more details and access the dataset from [the original GitHub repository](https://github.com/nytimes/covid-19-data?tab=readme-ov-file).
+Note: This dataset is for non-commercial use only as per the terms of its license. Please review the full terms of use in [the original repository](https://github.com/nytimes/covid-19-data/tree/master?tab=License-1-ov-file).
 
 Data can be found in the **[colleges.csv](colleges.csv)** file. ([Raw CSV](https://raw.githubusercontent.com/nytimes/covid-19-data/master/colleges/colleges.csv))
 
@@ -17,70 +44,53 @@ date,state,county,city,ipeds_id,college,cases,cases_2021,notes
 2021-02-26,Alabama,Jefferson,Birmingham,100663,University of Alabama at Birmingham,2856,570,"Total is known to include one or more cases from a medical school, medical center, teaching hospital, clinical setting or other academic program in health sciences."
 ```
 
-Data Source: Tracking Covid-19 at U.S. Colleges and Universities
-This dataset, provided by The New York Times, tracks Covid-19 cases reported at colleges and universities across the U.S. during the 2020-21 academic year. It includes data on more than 1,900 institutions, collected through a rolling survey.
 
-Data is available in the colleges.csv file, and it contains columns such as:
+## Project Description
 
-**date**: The date of the most recent update
-**state**: The state where the college is located in the U.S.
-**county**: The county in each state where the college is located
-**city**: The city where the college is located
-**ipeds_id**: The Integrated Postsecondary Education Data System (IPEDS) ID number for the college.  
-**cases**: Total reported Covid-19 cases
-**cases_2021**: Cases reported specifically in 2021
-**notes**: Any special notes on the data collection
+This project aims to analyze Covid-19 cases at U.S. colleges and universities using MySQL queries. The dataset is imported into a MySQL database, and various queries are written to gain insights, such as:
+- Trends in Covid-19 cases by region
+- Comparison of reported cases across institutions
+- Analyzing the number of cases reported in 2021
+- Investigating colleges with zero cases or missing data
 
-You can find more details and access the dataset from the (original GitHub repository)[https://github.com/nytimes/covid-19-data?tab=readme-ov-file].
-Note: This dataset is for non-commercial use only as per the terms of its license. Please review the full terms of use in the original repository.
+## Setup and Usage
+
+### Prerequisites
+- MySQL Server (version 5.x or higher)
+- MySQL Workbench or any MySQL client for running queries
+- Basic understanding of SQL
+
+### Installation Steps
+1. **Clone this repository:**
+   ```bash
+   git clone git@github.com:branndonle/covid-data-analysis.git
+
+   
+### Key Changes:
+- The **Data Source** section now comes first, directly informing users where the dataset comes from and what it contains.
+- **Attribution** follows the **Data Source**, explaining how to properly credit the dataset and any relevant licensing details.
+
+This structure should make the repository clearer and easier to follow. Let me know if you'd like any further refinements!
 
 
-The fields have the following definitions:
 
-**county**: The county where the college is located.  
-**city**: The city where the college is located.  
-**ipeds_id**: The Integrated Postsecondary Education Data System (IPEDS) ID number for the college.  
-**college**: The name of the college or university.  
-**cases**: The total number of reported Covid-19 cases among university students and employees in all fields, including those whose roles as doctors, nurses, pharmacists or medical students put them at higher risk of contracting the virus, since the beginning of the pandemic.  
-**cases_2021**: The total number of newly reported Covid-19 cases since Jan. 1, 2021 only.
-**notes**: Specific methodological notes that apply to the institution, for example if the count includes cases from a medical unit, and if there is a possibility that duplicate cases have been counted due to the manner in which the institution reports data.   
+## Attribution
 
-Colleges and universities that have reported zero cases will be listed with a zero for cases, while colleges which have not reported data will have a blank in the cases field.
+The data used in this project is sourced from The New York Times. The dataset tracks Covid-19 cases at U.S. colleges and universities, collected between July 2020 and March 2023. 
 
-## Methodology
+You can find the data [here](https://raw.githubusercontent.com/nytimes/covid-19-data/master/colleges/colleges.csv).
 
-Data is based on reports from colleges and government sources and may lag. Cases include those of students, faculty, staff members and other college workers. Colleges and government agencies report this data differently, so exercise caution when comparing institutions. Some colleges declined to provide data, provided partial data or did not respond to inquiries. At some institutions, cases may be spread across multiple campuses. Total cases include confirmed positive cases and probable cases, where available. Colleges occasionally adjust their data downward if new information emerges.
+### Data Description:
+This dataset includes the total number of reported Covid-19 cases among university students and employees, including those in high-risk roles such as doctors, nurses, pharmacists, and medical students, from the beginning of the pandemic.
 
-Because colleges report data differently, and because cases continued to emerge even in the months when most campuses were closed, The Times is counting all reported cases since the start of the pandemic for 2020.
+For a more detailed description of the data, refer to "The New York Times survey of U.S. Colleges and Universities".
 
-With no national tracking system, colleges are making their own rules for how to tally infections. While The Times’s survey is believed to be the most comprehensive account available, it is also a near-certain undercount. Among the colleges contacted by The Times, most published case information online or responded to requests for case numbers, but others did not respond, declined to provide information or only provided partial information. Some colleges reported zero cases. The Times obtained case data through open records requests at several public universities that would not otherwise provide numbers.
+### License:
+The data is licensed under the same terms as the [Coronavirus Data in the United States data](https://github.com/nytimes/covid-19-data).
 
-Given the disparities in size, reopening plans and transparency among universities, it is not recommended to use this data to make campus-to-campus comparisons. Some colleges subtract cases from their tallies once people recover. Some report only tests performed on campus. Some colleges reported some cases without identifying whether they occurred in 2020 or 2021. Those cases are not included in our totals.
+### Link to Original Graphic:
+If you use this data in an online presentation, please link to The New York Times graphic discussing these results: [College Covid Tracker](https://www.nytimes.com/interactive/2021/us/college-covid-tracker.html).
 
-When colleges have noted that an infected person did not have access to campus in the month before testing positive, we have excluded them from our count.
+### Contact:
+For questions regarding the data, contact: covid-data@nytimes.com.
 
-The size of colleges and universities in this data set vary widely, but we have not calculated or published per capita case counts because institutions vary in whether they report cases among faculty and staff and in how the total population of faculty, staff and students are defined.
-
-Because colleges continue to change how they report data, we will not be publishing any historical time series of the number of cases at different points in time. 
-
-## License and Attribution
-
-This data is licensed under the same terms as our [Coronavirus Data in the United States data](https://github.com/nytimes/covid-19-data). In general, we are making this data publicly available for broad, noncommercial public use including by medical and public health researchers, policymakers, analysts and local news media.
-
-If you use this data, you must attribute it to “The New York Times” in any publication. If you would like a more expanded description of the data, you could say “The New York Times survey of U.S. Colleges and Universities”
-
-If you use it in an online presentation, we would appreciate it if you would link to our graphic discussing these results [https://www.nytimes.com/interactive/2021/us/college-covid-tracker.html](https://www.nytimes.com/interactive/2021/us/college-covid-tracker.html).
-
-If you use this data, please let us know at covid-data@nytimes.com.
-
-See our [LICENSE](https://github.com/nytimes/covid-19-data/blob/master/LICENSE) for the full terms of use for this data.
-
-## Contact Us
-
-If you have questions about the data or licensing conditions, please contact us at:
-
-covid-data@nytimes.com
-
-## Contributors
-
-Weiyi Cai, Danielle Ivory, Kirk Semple, Mitch Smith, Alex Lemonides, Lauryn Higgins, Adeel Hassan, Julia Calderone, Jordan Allen, Anne Barnard, Yuriria Avila, Brillian Bao, Elisha Brown, Alyssa Burr, Sarah Cahalan, Matt Craig, Yves De Jesus, Brandon Dupré, Timmy Facciola, Bianca Fortis, Grace Gorenflo, Benjamin Guggenheim, Barbara Harvey, Jacob LaGesse, Alex Lim, Alex Leeds Matthews, Jaylynn Moffat-Mowatt, Ashlyn O’Hara, Laney Pope, Cierra S. Queen, Natasha Rodriguez, Jess Ruderman, Alison Saldanha, Emily Schwing, Sarena Snider, Brandon Thorp, Kristine White, Bonnie G. Wong, Tiffany Wong and John Yoon.
