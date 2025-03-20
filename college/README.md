@@ -65,15 +65,6 @@ This project aims to analyze Covid-19 cases at U.S. colleges and universities us
    ```bash
    git clone https://github.com/branndonle/covid-data-analysis.git
 
-   
-### Key Changes:
-- The **Data Source** section now comes first, directly informing users where the dataset comes from and what it contains.
-- **Attribution** follows the **Data Source**, explaining how to properly credit the dataset and any relevant licensing details.
-
-This structure should make the repository clearer and easier to follow. Let me know if you'd like any further refinements!
-
-
-
 ## Attribution
 
 The data used in this project is sourced from The New York Times. The dataset tracks Covid-19 cases at U.S. colleges and universities, collected between July 2020 and March 2023. 
