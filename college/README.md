@@ -65,6 +65,27 @@ This project aims to analyze Covid-19 cases at U.S. colleges and universities us
    ```bash
    git clone https://github.com/branndonle/covid-data-analysis.git
 
+
+## Methodology
+### Data Wrangling:
+This is the first step where inspection of data occurs to ensure NULL values and missing values are detected and data replacement methods are used to occupy missing or NULL values.
+This is the first step where data inspection occurs to ensure NULL and missing values are detected and value replacement methods are used to fill in missing null values.
+- Process:
+  1. Create a database
+  2. Create a table with matching format to import data
+  3. Import data into table
+  4. Alter table column 'date' format from VARCHAR to DATE
+  5. Alter the table column 'ipeds_id' format from varchar to INT format
+  6. Adjust the cases_2021 null values to 0
+
+### General Insight
+> 1. How many unique cities are there?
+> 2. What are the earliest and latest Dates in the dataset?
+> 3. Find the College with the Most Cases in 2021
+> 4. ind the average case per college
+> 5. Find the average in cases and cases_2021
+> 6. List Colleges with More Than 1,000 Cases in Any Year
+> 7. Year-over-Year Case Change (2020 vs. 2021)
 ## Attribution
 
 The data used in this project is sourced from The New York Times. The dataset tracks Covid-19 cases at U.S. colleges and universities, collected between July 2020 and March 2023. 
