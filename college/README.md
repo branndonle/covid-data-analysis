@@ -86,6 +86,18 @@ This is the first step where data inspection occurs to ensure NULL and missing v
 > 5. Find the average in cases and cases_2021
 > 6. List Colleges with More Than 1,000 Cases in Any Year
 > 7. Year-over-Year Case Change (2020 vs. 2021)
+> 8. Find the top 5 counties with the most cases
+> 9. Find all colleges in a specific state (e.g., California).
+> 10. List all unique states present in the dataset.
+> 11. Retrieve the top 10 colleges with the most recorded cases in 2021.
+> 12. Find colleges that had zero reported cases in both years.
+> 13. Identify colleges that have missing (NULL) values in any column
+> 14. Count how many colleges are in each state.
+> 15.  Find the total number of cases per county across all colleges.
+> 16.  Retrieve the average number of cases per state in 2021.
+> 17.  Find the college with the highest and lowest cases in 2021 in each state.
+> 18.  Calculate the percentage of total cases each state contributed to the dataset.
+
 ## Attribution
 
 The data used in this project is sourced from The New York Times. The dataset tracks Covid-19 cases at U.S. colleges and universities, collected between July 2020 and March 2023. 
