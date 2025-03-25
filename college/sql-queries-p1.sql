@@ -95,4 +95,29 @@ WHERE cases > 1000 AND cases_2021 > 1000
 -- Q7. Year-over-Year Case Change (2020 vs. 2021)
 
 
--- -----------------------------------------------------------END OF EXPLORATORY DATA ANALYSIS----------------------------------------------------------
+-- Q8. Find the top 5 counties with the most cases
+SELECT county, SUM(cases) AS total_cases
+FROM colleges
+GROUP BY county
+
+-- Q9. Find all colleges in a specific state (e.g., California).
+
+-- Q10. List all unique states present in the dataset.
+
+-- Q11. Retrieve the top 10 colleges with the most recorded cases in 2021.
+
+-- Q12. Find colleges that had zero reported cases in both years.
+
+-- Q13. Identify colleges that have missing (NULL) values in any column
+
+-- Q14. Count how many colleges are in each state.
+
+-- Q15. Find the total number of cases per county across all colleges.
+
+-- Q16. Retrieve the average number of cases per state in 2021.
+
+-- Q17. Find the college with the highest and lowest cases in 2021 in each state.
+
+-- Q18. Calculate the percentage of total cases each state contributed to the dataset.
+
+-- -----------------------------------------------------------END OF EXPLORATORY DATA ANALYSIS---------------------------------------------------------
